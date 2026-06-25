@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Eye, ExternalLink, Volume2, VolumeX, Heart } from 'lucide-react';
 import { siteConfig } from '@/config/site';
@@ -8,6 +8,7 @@ import { siteConfig } from '@/config/site';
 export default function FeaturedVideo() {
   const sectionRef = useRef<HTMLElement>(null);
   const isInView = useInView(sectionRef, { once: true, margin: '-100px' });
+  const isVideoInView = useInView(sectionRef, { margin: '-50px' });
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isMuted, setIsMuted] = useState(true);
 
@@ -17,6 +18,16 @@ export default function FeaturedVideo() {
       setIsMuted(!isMuted);
     }
   };
+
+  useEffect(() => {
+    if (videoRef.current) {
+      if (isVideoInView) {
+        videoRef.current.play().catch(() => {});
+      } else {
+        videoRef.current.pause();
+      }
+    }
+  }, [isVideoInView]);
 
   return (
     <section ref={sectionRef} className="relative py-24 sm:py-32 bg-midnight overflow-hidden">
@@ -103,7 +114,6 @@ export default function FeaturedVideo() {
               <video
                 ref={videoRef}
                 src="/videos/hero-background.mp4"
-                autoPlay
                 loop
                 muted
                 playsInline

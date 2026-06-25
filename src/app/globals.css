@@ -177,10 +177,14 @@ h1, h2, h3, h4, h5, h6, .font-display {
 
 .animate-scroll-left {
   animation: scroll-left 30s linear infinite;
+  will-change: transform;
+  backface-visibility: hidden;
 }
 
 .animate-scroll-right {
   animation: scroll-right 30s linear infinite;
+  will-change: transform;
+  backface-visibility: hidden;
 }
 
 /* Glowing dot for urgency */

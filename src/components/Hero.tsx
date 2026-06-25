@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState, useRef, useCallback } from 'react';
-import { motion, useMotionValue, useSpring, useTransform, Variants, useScroll, useMotionTemplate } from 'framer-motion';
+import { motion, useMotionValue, useSpring, useTransform, Variants, useScroll, useInView } from 'framer-motion';
 import { ChevronDown, ArrowRight } from 'lucide-react';
 import { siteConfig } from '@/config/site';
 import { trustSignals } from '@/config/content';
@@ -26,6 +26,7 @@ const itemVariants: Variants = {
 export default function Hero() {
   const [isMounted, setIsMounted] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
@@ -44,9 +45,21 @@ export default function Hero() {
   const contentY = useTransform(scrollYProgress, [0, 1], [0, 100]);
   const overlayOpacity = useTransform(scrollYProgress, [0, 0.5], [0.4, 0.8]);
 
+  const isHeroInView = useInView(sectionRef, { amount: 0.15 });
+
   useEffect(() => {
     setIsMounted(true);
   }, []);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      if (isHeroInView) {
+        videoRef.current.play().catch(() => {});
+      } else {
+        videoRef.current.pause();
+      }
+    }
+  }, [isHeroInView]);
 
   const handleMouseMove = useCallback((e: React.MouseEvent) => {
     if (typeof window !== 'undefined') {
@@ -75,13 +88,12 @@ export default function Hero() {
           className="absolute inset-[-12%] w-[124%] h-[124%]"
         >
           <video
+            ref={videoRef}
             src="/videos/hero-background.mp4"
-            autoPlay
             loop
             muted
             playsInline
             className="w-full h-full object-cover"
-            style={{ filter: 'contrast(1.15) brightness(0.85) saturate(1.1)' }}
           />
         </motion.div>
       </div>
