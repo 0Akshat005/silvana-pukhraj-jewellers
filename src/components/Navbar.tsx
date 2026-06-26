@@ -50,10 +50,10 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-18 sm:h-20">
             {/* Logo */}
             <a href="#" className="flex flex-col items-start group">
-              <span className="font-display text-2xl sm:text-3xl font-bold tracking-[0.25em] text-gold transition-all duration-300 group-hover:text-gold-soft gold-text-shadow">
+              <span className="font-display text-2xl sm:text-3xl font-bold tracking-[0.25em] bg-gradient-to-b from-[#FFFFFF] via-[#E2E8F0] to-[#94A3B8] bg-clip-text text-transparent drop-shadow-[0_0_15px_rgba(255,255,255,0.3)] transition-all duration-500 group-hover:scale-[1.02]">
                 SILVANA
               </span>
-              <span className="text-[8px] sm:text-[9px] tracking-[0.2em] text-gold-soft/50 uppercase -mt-0.5 transition-colors duration-300 group-hover:text-gold-soft/70">
+              <span className="text-[8px] sm:text-[9px] tracking-[0.2em] text-[#E2E8F0]/50 uppercase -mt-0.5 transition-colors duration-300 group-hover:text-[#E2E8F0]/80">
                 by {siteConfig.brandName}
               </span>
             </a>
@@ -125,7 +125,7 @@ export default function Navbar() {
 
             {/* Close Button */}
             <div className="flex justify-between items-center px-6 py-5">
-              <span className="font-display text-2xl font-bold tracking-[0.25em] text-gold gold-text-shadow">
+              <span className="font-display text-2xl font-bold tracking-[0.25em] bg-gradient-to-b from-[#FFFFFF] via-[#E2E8F0] to-[#94A3B8] bg-clip-text text-transparent drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]">
                 SILVANA
               </span>
               <button

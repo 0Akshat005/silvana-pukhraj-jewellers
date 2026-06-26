@@ -30,16 +30,10 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="sm:col-span-2 lg:col-span-4">
             <a href="#" className="inline-block mb-6 group">
-              <span
-                className="font-display text-4xl font-bold tracking-[0.25em] text-gold block transition-all duration-500"
-                style={{
-                  textShadow:
-                    '0 0 20px rgba(201,169,110,0.25), 0 0 40px rgba(201,169,110,0.1)',
-                }}
-              >
+              <span className="font-display text-4xl font-bold tracking-[0.25em] bg-gradient-to-b from-[#FFFFFF] via-[#E2E8F0] to-[#94A3B8] bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(255,255,255,0.2)] block transition-all duration-500 group-hover:scale-[1.02]">
                 {siteConfig.subBrand}
               </span>
-              <span className="block text-[10px] tracking-[0.2em] text-gold/40 uppercase mt-1">
+              <span className="block text-[10px] tracking-[0.2em] text-[#E2E8F0]/40 uppercase mt-1 group-hover:text-[#E2E8F0]/70 transition-colors duration-300">
                 by {siteConfig.brandName}
               </span>
             </a>

@@ -142,24 +142,24 @@ export default function Hero() {
           {/* Ultra-Premium Headline with shimmer */}
           <motion.h1
             variants={itemVariants}
-            className="font-display text-5xl sm:text-6xl md:text-8xl lg:text-[120px] font-extralight text-cream leading-[1.02] tracking-wide mb-8 pb-4 gold-text-shadow"
+            className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-[100px] font-extralight text-cream leading-[1.05] tracking-wide mb-8 pb-4 gold-text-shadow"
           >
-            Timeless Craft.
+            Timeless Purity.
             <br />
             <span className="gold-shimmer-text italic font-light tracking-normal inline-block mt-2 pr-6 pb-6">
-              Fine Jewellery.
+              Generations of Trust.
             </span>
           </motion.h1>
 
           {/* Elegant Subtitle */}
           <motion.p
             variants={itemVariants}
-            className="text-pearl/60 text-xs sm:text-sm md:text-base tracking-[0.35em] uppercase max-w-2xl mx-auto mb-16 font-light leading-relaxed"
+            className="text-pearl/60 text-xs sm:text-sm md:text-base tracking-[0.35em] uppercase max-w-3xl mx-auto mb-16 font-light leading-relaxed"
           >
-            Diamonds &bull; Gold &bull; Exquisite Silver
+            Diamonds &bull; Gold &bull; Silver
             <br className="sm:hidden" />
             <span className="hidden sm:inline"> &mdash; </span>
-            A Legacy of Brilliance
+            Adorning Your Most Beautiful Moments
           </motion.p>
 
           {/* Cinematic CTA Buttons */}
@@ -204,16 +204,16 @@ export default function Hero() {
       </motion.div>
 
       {/* Trust Marquee at Bottom */}
-      <div className="absolute bottom-0 left-0 right-0 h-14 bg-midnight/70 backdrop-blur-2xl border-t border-gold/[0.08] overflow-hidden flex items-center z-20">
+      <div className="absolute bottom-0 left-0 right-0 h-14 bg-midnight/80 backdrop-blur-3xl border-t border-gold/20 overflow-hidden flex items-center z-20 shadow-[0_-5px_20px_rgba(0,0,0,0.3)]">
         <div className="flex whitespace-nowrap items-center animate-scroll-left">
           {[...Array(4)].map((_, i) => (
             <div key={i} className="flex items-center">
               {trustSignals.map((signal, index) => (
                 <div key={index} className="flex items-center">
-                  <span className="text-pearl/40 text-[8px] tracking-[0.25em] uppercase font-semibold px-10">
+                  <span className="text-gold/90 text-[10px] tracking-[0.3em] uppercase font-bold px-12 drop-shadow-[0_0_8px_rgba(201,169,110,0.3)]">
                     {signal}
                   </span>
-                  <span className="w-1 h-1 rounded-full bg-gold/20" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-gold shadow-[0_0_8px_rgba(201,169,110,0.8)]" />
                 </div>
               ))}
             </div>
