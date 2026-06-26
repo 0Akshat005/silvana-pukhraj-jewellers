@@ -89,7 +89,7 @@ export default function Hero() {
         >
           <video
             ref={videoRef}
-            src="/videos/hero-background.mp4"
+            src="/videos/hero-diamond.mp4"
             loop
             muted
             playsInline
@@ -147,7 +147,7 @@ export default function Hero() {
             Timeless Craft.
             <br />
             <span className="gold-shimmer-text italic font-light tracking-normal inline-block mt-2 pr-6 pb-6">
-              Trusted Legacy.
+              Fine Jewellery.
             </span>
           </motion.h1>
 
@@ -156,10 +156,10 @@ export default function Hero() {
             variants={itemVariants}
             className="text-pearl/60 text-xs sm:text-sm md:text-base tracking-[0.35em] uppercase max-w-2xl mx-auto mb-16 font-light leading-relaxed"
           >
-            Gold &bull; Silver &bull; Gemstones
+            Diamonds &bull; Gold &bull; Exquisite Silver
             <br className="sm:hidden" />
             <span className="hidden sm:inline"> &mdash; </span>
-            Nagpur Since Generations
+            A Legacy of Brilliance
           </motion.p>
 
           {/* Cinematic CTA Buttons */}
